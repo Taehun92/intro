@@ -3,7 +3,15 @@
 <head>
 	<title>온라인 프로필</title>
 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @font-face {
+    font-family: 'PFStardust';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
     table {
       width:70%; 
       border:1px solid #222; 
@@ -18,56 +26,168 @@
       font-size:0.8em; 
     }
 
-    #container {
-        width: 1000px;
-        margin: 10px auto;
-    }
-    #side {
-        width: 180px;
-        height: 1000px;
-        background-color: black;
-        color: white;
-        border-top-left-radius: 10px ;
-        border-top-right-radius: 10px ;
-        float: left;
-        padding: 10px;
-    }
-    #contents {
-        background-image: url(media/cartoon.png);
-        background-size: contain;
+    body{
+        line-height: 2.5;
+        font-family:'PFStardust';
+        background-image: url(media/Laboratory.gif);
+        background-size: cover;
+        background-position: fixed;
         background-repeat: no-repeat;
-        width: 500px;
-        height: 1000px;
-        padding: 10px;
-        float: left;
-    }
-
-    #namecard {
-        border: 5px dashed gray;
-        border-radius: 10px;
-        background-size: 20px;
-        padding: 10px;
-        font-weight: bold;
-    }
-    #detail {
-        padding: 10px;
-    }
-    #sns {
-        padding: 10px;
-    }
-
-
-
-    .subtitle {
-        color: rgb(51, 51, 51);
-        font-size: 35px;
-        font-weight: bolder;
+        width: 100%;
+        height: 100%;
         
     }
 
-    section {
-        border-bottom: 3px;
-        margin: 20px;
+    #container {
+        width: 1780px;
+        height: 770px;
+        border-radius: 20px;
+        padding: 50px;
+        margin: auto;
+        background-color: #919191bd;
+    }
+
+    #fixed_side {
+        position: fixed;
+    }
+
+    #side {
+        width: 600px;
+        position: relative;
+    }
+
+    #detail {
+        line-height: 1.5;
+        font-size: 18px;
+        width: 290px;
+        margin: 10px auto;
+    }
+    
+    #sns { 
+        width: 80px;
+        padding: 10px;
+        margin: 10px auto;
+        float: right;
+        position: relative;
+        top: -50px;
+        right: -10px;
+    }
+
+    .sns { 
+        border-radius: 50%;
+        margin: 10px auto;
+    }
+
+    #sns :hover {
+        cursor: pointer;
+	    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.87);
+        border-radius: 50%;
+        transform: scale(1.2);
+        transition: 1s;
+    }
+
+    #namecard {
+        width: 240px;
+        margin: 10px auto;
+        margin-top: 100px;
+    }
+
+    #profile {
+        margin-top: -50px;
+    }
+
+    #main_pic {
+        width: 300px;
+        position: absolute;
+        top: 340px;
+    }
+
+    #contents {
+        background-image: url(media/pixel_textbox1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1200px;
+        height: 800px;
+        position: relative;
+        top : -10px;
+        left: 580px;
+        float: left;
+    }
+
+    .contents {
+        font-size: 20px;
+        width: 650px;
+        height: 700px;
+        padding-top: 100px;
+        padding-left: 200px;
+        margin: 10px auto;
+        position: absolute;
+        left: 20px;
+        display: none;
+    }
+
+    #btn {
+        font-family:'PFStardust';
+        width: 80px;
+        background-color : rgb(31, 30, 30);
+        box-shadow: 1px 1px 3px 8px #e7e3e360;
+        color : white;
+        padding : 15px;
+        font-size: 15px;
+        border : none;
+        border-radius: 10px;
+        position: absolute;
+        left : -120px;
+        cursor : pointer;
+    }
+    #menu {
+        width: 150px;
+        background-color: #f9f9f9;
+        box-shadow: 1px 3px 8px 3px #e7e3e3;
+        border-radius: 10px;
+        font-weight: 580;
+        text-align: center;
+        display: none; 
+        position: absolute;
+        left : -40px;  
+    }
+    #menu a {
+        display: block;
+        padding : 10px;
+        cursor: pointer;
+    }
+    #dropdown {
+        display: inline-block;
+    }
+    #dropdown:hover #menu { 
+        display: block;
+    }
+    #menu a:hover {
+        border-radius: 10px;
+        background-color: #e7e3e3;
+    }
+
+    #timeContainer {
+        position: absolute;
+        right: 50px;
+        bottom: 20px;
+        line-height: 1.6;
+        font-size: 22px;
+        color: black;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    @media screen and (max-width : 1920px){
+        
+    }
+
+    @media screen and (max-width : 1440px){
+        
+    }
+
+    @media screen and (max-width : 768px){
+        
     }
 
 
@@ -77,89 +197,140 @@
 <body>
     <div id="container">
         <!-- 사이드바 -->
-        <div id="side">
-            <div id="detail">
-                <p>Incheon, Korea</p>
-                <p>test@naver.com</p>                                 
+        <div id="fixed_side">
+            <div id="side">
+                <div id="detail">
+                    <h3>풀스택 개발을 배우고 있습니다</h3>
+                    <h4>2024.12.26 ~</h4>                                
+                </div>   
+                <div id="profile">
+                    <div id="namecard">
+                        <h1 style="font-size: 66px;">이 태 훈</h1>    
+                    </div>
+                    <div id="main_pic">
+                        <img src="media/my_pic_size.png" width="500" height="500">
+                    </div>
+                </div>      
             </div>
-            <div id="sns">
-                <h2>SNS</h2>
-                <h3><a href="#">클릭!</a></h3>
-            </div>     
-            <div id="namecard">
-                <img src="media/mint.jpg" style="width: 145px; height : 150px;">
-                <h1 style="font-style: italic;">Hong Gildong</h1>    
-                <p>프로그래밍 재밌다</p>
-            </div>      
         </div>
         <div id="contents">
-            <section>
-                        <div class="subtitle">자기소개</div>
-                <p><span style="font-weight: bold;">프로그래밍</span>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
-            </section>
-
-            <!-- 경력 -->
-            <section>
-                         <div class="subtitle">Experience</div>
-                <ul>
-                    <li>프론트엔드
-                        <ul>
-                            <li>HTML/CSS/JAVASCRIPT </li>
-                            <li>웹 페이지 잘 만든다 </li>
-                            <li>다 잘함</li> 
-                        </ul>
-                    </li>
-                    <li>백엔드
-                        <ul>
-                            <li>자바 잘함 </li>
-                            <li>오라클 더 잘함</li>
-                        </ul>                        
-                    </li>
-                </ul>
-             </fieldset>             
-            </section>
-
-            <!-- 숙련도 -->
-            <section>
-                        <div class="subtitle">보유 기술</div>
-                <li style="list-style: none;"> 
+            <div id="contents1" class="contents" style="display: none;">
+                <section>
+                    <div class="subtitle">자기소개</div>
+                    <p><span style="font-weight: bold;">프로그래밍</span>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                </section>
+            </div>
+            <div id="contents2" class="contents">
+                <!-- 경력 -->
+                <section>
+                    <div class="subtitle">Experience</div>
+                    <ul>
+                        <li>프론트엔드
+                            <ul>
+                                <li>HTML/CSS/JAVASCRIPT </li>
+                                <li>웹 페이지 잘 만든다 </li>
+                                <li>다 잘함</li> 
+                            </ul>
+                        </li>
+                        <li>백엔드
+                            <ul>
+                                <li>자바 잘함 </li>
+                                <li>오라클 더 잘함</li>
+                            </ul>                        
+                        </li>
+                    </ul>         
+                </section>
+            </div>
+            <div id="contents3" class="contents">    
+                <!-- 숙련도 -->
+                <section>
+                    <div class="subtitle">보유 기술</div>
                     <ul>
                         <li>자바 </li>
                         <li>오라클</li>
                     </ul>                        
-                </li>
-            </section>
-
-            <!-- 학력 -->
-            <section>
-                        <div class="subtitle">Education</div>
-                <table>
-                  <caption>학력 사항</caption>
-                  <thead>
-                      <tr>
-                          <th>출신학교</th>
-                          <th>전공</th>
-                          <th>기간</th>
-                          <th>구분</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>좋은대학교</td>
-                          <td>좋은학과</td>
-                          <td>2010.3 ~ 2013.2</td>
-                          <td>졸업</td>
-                      </tr>
-                      <tr>
-                          <td>꽤좋은고등학교</td>
-                          <td> - </td>
-                          <td>2007.3 ~ 2009.2</td>
-                          <td>졸업</td>
-                      </tr>
-                  </tbody>
-                </table>
-            </section>
-        </div>        
+                </section>
+            </div>
+            <div id="contents4" class="contents">
+                <!-- 학력 -->
+                <section>
+                    <div class="subtitle">Education</div>
+                    <table>
+                        <caption>학력 사항</caption>
+                        <thead>
+                            <tr>
+                                <th>출신학교</th>
+                                <th>전공</th>
+                                <th>기간</th>
+                                <th>구분</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>좋은대학교</td>
+                                <td>좋은학과</td>
+                                <td>2010.3 ~ 2013.2</td>
+                                <td>졸업</td>
+                            </tr>
+                            <tr>
+                                <td>꽤좋은고등학교</td>
+                                <td> - </td>
+                                <td>2007.3 ~ 2009.2</td>
+                                <td>졸업</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="dropdown">
+                <button id="btn">메 뉴</button>
+                <div id="menu">
+                    <a onclick="fnChangeContents(1)">자기소개</a>
+                    <a onclick="fnChangeContents(2)" >경력</a>
+                    <a onclick="fnChangeContents(3)">숙련도</a>
+                    <a onclick="fnChangeContents(4)">학력<a>
+                </div>
+            </div>
+        </div>
+        <div id="sns">
+            <img id="google" class="sns" src="media/google.png" width="70" height="70">
+            <img id="instagram" class="sns" src="media/instagram.png" width="70" height="70">
+            <img id="github" class="sns" src="media/git_hub.png" width="70" height="70">
+        </div> 
+        <div id="timeContainer">
+            <span>현재시간</span>
+            <div id="time"></div>
+        </div>       
     </div>
 </body>
 </html>
+<script>
+    function fnChangeContents(indexNum){
+        let con1 = document.getElementById("contents1");
+        let con2 = document.getElementById("contents2");
+        let con3 = document.getElementById("contents3");
+        let con4 = document.getElementById("contents4");
+        con1.style.display="none";
+        con2.style.display="none";
+        con3.style.display="none";
+        con4.style.display="none";
+
+        if(indexNum == 1){
+            con1.style.display="block";
+        } else if (indexNum == 2){
+            con2.style.display="block";
+        } else if (indexNum == 3){
+            con3.style.display="block";
+        }else if (indexNum == 4){
+            con4.style.display="block";
+        }
+    }
+    
+    setInterval(() => {
+        let datetime = new Date();
+        let time = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
+        let obj = document.querySelector("#time");
+        obj.innerHTML = time;
+    }, 1000);
+
+</script>
