@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>입 장 안 내</title>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="css/animate.css">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <!--Card-->
+      <div class="card animated fadeIn">
+         <center><img class="center animated rollIn" src="media/my_pic_size.png" alt="avatar"></center>
+         <div class="name">
+            이 태 훈
+         </div>
+         <p class="subtitle">코딩 연습생</p>
+         <p class="location"><a href="intro.html" target="_blank">페이지 이동</a>
+         </p>
+         <p class="icons animated pulse">
+            <a href="javascript:;" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+            </a>
+            <a href="javascript:;" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+            </a>
+            <a href="javascript:;" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+            </a>
+         </p>
+      </div>
+      <!--footer-->
+      <footer class="animated fadeIn">
+        <i class="fa fa-love"></i><div style="color: white;"><span id="sec">5</span> 초 후 메인페이지로 이동합니다</div>
+      </footer>
+   </body>
+</html>
+<script>
+   let countNum = 5;
+   let interval = setInterval(function () {
+   countNum--;
+      if (countNum >= 1) {
+         document.querySelector("#sec").innerHTML = countNum;
+      }
+      if (countNum < 1) {
+         clearInterval(interval);
+         location.href="intro.html";
+      }
+}, 1000);
+
+
+</script>

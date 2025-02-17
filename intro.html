@@ -4,198 +4,224 @@
 	<title>온라인 프로필</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @font-face {
-    font-family: 'PFStardust';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        @font-face {
+        font-family: 'PFStardust';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
 
-    table {
-      width:70%; 
-      border:1px solid #222; 
-      border-collapse: collapse; 
-    }
-    thead {
-      background:#eee;  
-    }
-    th, td {
-      border:1px solid #ccc; 
-      padding:5px;  
-      font-size:0.8em; 
-    }
+        table {
+        width:70%; 
+        border:1px solid #222; 
+        border-collapse: collapse; 
+        }
+        thead {
+        background:#eee;  
+        }
+        th, td {
+        border:1px solid #ccc; 
+        padding:5px;  
+        font-size:0.8em; 
+        }
 
-    body{
-        line-height: 2.5;
-        font-family:'PFStardust';
-        background-image: url(media/Laboratory.gif);
-        background-size: cover;
-        background-position: fixed;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
+        body{
+            line-height: 2.5;
+            font-family:'PFStardust';
+            background-image: url(media/Laboratory.gif);
+            background-size: cover;
+            background-position: fixed;
+            background-repeat: no-repeat;
+            width: 100vh;
+            
+        }
+
+        #container {
+            width: 1780px;
+            height: 820px;
+            border-radius: 20px;
+            padding: 50px;
+            margin: auto;
+        }
+
+        .light-mode {
+            background-color: rgba(184, 184, 184, 0.63);
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: #1b1b1bbd;
+            color: white;
+        }
+
+        #fixed_side {
+            position: fixed;
+        }
+
+        #side {
+            width: 600px;
+            position: relative;
+        }
+
+        #detail {
+            line-height: 1.5;
+            font-size: 18px;
+            width: 290px;
+            margin: 10px auto;
+        }
         
-    }
+        #sns { 
+            width: 80px;
+            padding: 10px;
+            margin: 10px auto;
+            float: right;
+            position: relative;
+            top: -50px;
+            right: -10px;
+        }
 
-    #container {
-        width: 1780px;
-        height: 770px;
-        border-radius: 20px;
-        padding: 50px;
-        margin: auto;
-        background-color: #919191bd;
-    }
+        .sns { 
+            border-radius: 50%;
+            margin: 10px auto;
+        }
 
-    #fixed_side {
-        position: fixed;
-    }
+        #sns :hover {
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.87);
+            border-radius: 50%;
+            transform: scale(1.2);
+            transition: 1s;
+        }
 
-    #side {
-        width: 600px;
-        position: relative;
-    }
+        #mode {
+            border-radius: 50%;
+            width: 80px;
+            padding: 10px;
+            margin: 10px auto;
+            float: right;
+            position: absolute;
+            top: 760px;
+            right: 15px;
+            cursor: pointer;
+        }
 
-    #detail {
-        line-height: 1.5;
-        font-size: 18px;
-        width: 290px;
-        margin: 10px auto;
-    }
-    
-    #sns { 
-        width: 80px;
-        padding: 10px;
-        margin: 10px auto;
-        float: right;
-        position: relative;
-        top: -50px;
-        right: -10px;
-    }
+        #namecard {
+            width: 240px;
+            margin: 10px auto;
+            margin-top: 100px;
+        }
 
-    .sns { 
-        border-radius: 50%;
-        margin: 10px auto;
-    }
+        #profile {
+            margin-top: -50px;
+        }
 
-    #sns :hover {
-        cursor: pointer;
-	    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.87);
-        border-radius: 50%;
-        transform: scale(1.2);
-        transition: 1s;
-    }
+        #main_pic {
+            width: 300px;
+            position: absolute;
+            top: 340px;
+        }
 
-    #namecard {
-        width: 240px;
-        margin: 10px auto;
-        margin-top: 100px;
-    }
+        #contents {
+            background-image: url(media/pixel_textbox1.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: black;
+            width: 1200px;
+            height: 800px;
+            position: relative;
+            top : -10px;
+            left: 580px;
+            float: left;
+        }
 
-    #profile {
-        margin-top: -50px;
-    }
+        .contents {
+            font-size: 20px;
+            width: 650px;
+            height: 700px;
+            padding-top: 100px;
+            padding-left: 200px;
+            margin: 10px auto;
+            position: absolute;
+            left: 20px;
+            display: none;
+        }
 
-    #main_pic {
-        width: 300px;
-        position: absolute;
-        top: 340px;
-    }
+        #btn {
+            font-family:'PFStardust';
+            width: 80px;
+            background-color : rgb(31, 30, 30);
+            box-shadow: 1px 1px 3px 8px #e7e3e360;
+            color : white;
+            padding : 15px;
+            font-size: 15px;
+            border : none;
+            border-radius: 10px;
+            position: absolute;
+            left : -120px;
+            cursor : pointer;
+        }
+        #menu {
+            width: 150px;
+            background-color: #f9f9f9;
+            box-shadow: 1px 3px 8px 3px #e7e3e3;
+            border-radius: 10px;
+            font-weight: 580;
+            text-align: center;
+            display: none; 
+            position: absolute;
+            left : -40px;  
+        }
+        #menu a {
+            display: block;
+            padding : 10px;
+            cursor: pointer;
+        }
+        #dropdown {
+            display: inline-block;
+        }
+        #dropdown:hover #menu { 
+            display: block;
+        }
+        #menu a:hover {
+            border-radius: 10px;
+            background-color: #e7e3e3;
+        }
 
-    #contents {
-        background-image: url(media/pixel_textbox1.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 1200px;
-        height: 800px;
-        position: relative;
-        top : -10px;
-        left: 580px;
-        float: left;
-    }
-
-    .contents {
-        font-size: 20px;
-        width: 650px;
-        height: 700px;
-        padding-top: 100px;
-        padding-left: 200px;
-        margin: 10px auto;
-        position: absolute;
-        left: 20px;
-        display: none;
-    }
-
-    #btn {
-        font-family:'PFStardust';
-        width: 80px;
-        background-color : rgb(31, 30, 30);
-        box-shadow: 1px 1px 3px 8px #e7e3e360;
-        color : white;
-        padding : 15px;
-        font-size: 15px;
-        border : none;
-        border-radius: 10px;
-        position: absolute;
-        left : -120px;
-        cursor : pointer;
-    }
-    #menu {
-        width: 150px;
-        background-color: #f9f9f9;
-        box-shadow: 1px 3px 8px 3px #e7e3e3;
-        border-radius: 10px;
-        font-weight: 580;
-        text-align: center;
-        display: none; 
-        position: absolute;
-        left : -40px;  
-    }
-    #menu a {
-        display: block;
-        padding : 10px;
-        cursor: pointer;
-    }
-    #dropdown {
-        display: inline-block;
-    }
-    #dropdown:hover #menu { 
-        display: block;
-    }
-    #menu a:hover {
-        border-radius: 10px;
-        background-color: #e7e3e3;
-    }
-
-    #timeContainer {
-        position: absolute;
-        right: 50px;
-        bottom: 20px;
-        line-height: 1.6;
-        font-size: 22px;
-        color: black;
-        font-weight: bold;
-        text-align: right;
-    }
-
-    @media screen and (max-width : 1920px){
+        #timeContainer {
+            position: absolute;
+            right: 55px;
+            bottom: 35px;
+            line-height: 1.6;
+            font-size: 22px;
+            color: black;
+            font-weight: bold;
+            text-align: right;
+        }
         
-    }
-
-    @media screen and (max-width : 1440px){
-        
-    }
-
-    @media screen and (max-width : 768px){
-        
-    }
+        .material-symbols-outlined {
+        font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 48;
+        font-size : 60px
+        }
 
 
-  </style>
+        @media screen and (max-width : 1920px){
+            
+        }
+
+        @media screen and (max-width : 1440px){
+            
+        }
+
+        @media screen and (max-width : 768px){
+            
+        }
+    </style>
 </head>
 
 <body>
-    <div id="container">
+    <div id="container" class="dark-mode">
         <!-- 사이드바 -->
         <div id="fixed_side">
             <div id="side">
@@ -297,6 +323,10 @@
             <img id="instagram" class="sns" src="media/instagram.png" width="70" height="70">
             <img id="github" class="sns" src="media/git_hub.png" width="70" height="70">
         </div> 
+        <div>
+            <span class="material-symbols-outlined" id="mode" onclick="fnMode()">light_mode</span>
+        </div>
+        
         <div id="timeContainer">
             <span>현재시간</span>
             <div id="time"></div>
@@ -305,6 +335,8 @@
 </body>
 </html>
 <script>
+    this.fnPopup();
+
     function fnChangeContents(indexNum){
         let con1 = document.getElementById("contents1");
         let con2 = document.getElementById("contents2");
@@ -332,5 +364,22 @@
         let obj = document.querySelector("#time");
         obj.innerHTML = time;
     }, 1000);
+
+    function fnPopup() {
+        window.open('popup.html','popup',`width = 320, height = 320, top = 500, left = 1450`); /* popup target을 설정하면 동일 이름의 팝업창은 하나만 존재 하게 된다. */
+    }
+
+    function fnMode(){
+        let container = document.getElementById("container");
+        container.classList.toggle('dark-mode'); // 처음에 off 상태라서 on 됨
+        container.classList.toggle('light-mode'); // 처음에 on 상태라서 off 됨
+        let icon = document.querySelector("#mode");
+        if(container.classList.contains('light-mode')){
+            icon.innerHTML = "dark_mode";
+        } else {
+            icon.innerHTML = "light_mode";
+        }
+    }
+
 
 </script>

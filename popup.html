@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스이벤트</title>
+    <style>
+        
+        #container{
+            background-color: rgba(0, 0, 0, 0.555);
+            width: 300px;
+            height: 300px;
+            margin: 0px auto;
+        }
+
+
+        #img {
+            width: inherit;
+            height: inherit;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="img" src="media/sprite_0.png" onclick="fnchange()">
+    </div>
+</body>
+</html>
+<script>
+let img = document.querySelector("#img");
+    img.addEventListener("mouseover", ()=>{
+        img.src = "media/sprite_1.png";
+    });
+    img.addEventListener("mouseout",()=>{
+        img.src = "media/sprite_2.png";
+    });
+    img.addEventListener("click",()=>{
+        img.src = "media/sprite_3.png";
+    });
+</script>
